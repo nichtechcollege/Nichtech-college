@@ -81,7 +81,7 @@ body{
 .hero{
   position:relative;
 
-  min-height:90vh;
+  min-height:100vh;
 
   display:flex;
   justify-content:center;
@@ -89,12 +89,14 @@ body{
 
   text-align:center;
 
-  padding:40px 20px;
+  padding:120px 20px 80px;
+
+  overflow:hidden;
 
   background:
-  linear-gradient(rgba(0,0,0,0.65),
-  rgba(0,0,0,0.65)),
-  url('../images/bg.jpg');
+  linear-gradient(rgba(0,0,0,0.70),
+  rgba(0,0,0,0.70)),
+  url('../Image/image1.jpg');
 
   background-size:cover;
   background-position:center;
@@ -105,16 +107,26 @@ body{
   color:white;
 }
 
+/* ===== LOGO FIX ===== */
 .logo{
-  width:120px;
-  margin-bottom:25px;
+  width:220px;
+  max-width:90%;
+  height:auto;
+
+  margin-bottom:30px;
+
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .hero h1{
-  font-size:42px;
-  line-height:1.2;
+  font-size:34px;
+  line-height:1.3;
   margin-bottom:20px;
   font-weight:800;
+
+  word-break:break-word;
 }
 
 .hero p{
@@ -343,95 +355,15 @@ body{
   color:#f3f4f6;
 }
 
-/* ===== FACEBOOK ===== */
-.facebook-section{
-  background:white;
-
-  padding:80px 20px;
-
-  text-align:center;
-}
-
-.facebook-section h2{
-  font-size:36px;
-  margin-bottom:15px;
-}
-
-.facebook-section p{
-  color:#666;
-  margin-bottom:30px;
-}
-
-.facebook-btn{
-  display:inline-block;
-
-  background:#1877f2;
-
-  color:white;
-
-  text-decoration:none;
-
-  padding:16px 30px;
-
-  border-radius:14px;
-
-  font-weight:600;
-
-  transition:0.3s;
-}
-
-.facebook-btn:hover{
-  background:#0f5fd3;
-}
-
 /* ===== FOOTER ===== */
 footer{
   background:#111827;
 
   color:#d1d5db;
 
-  padding:50px 20px;
+  padding:35px 20px;
 
   text-align:center;
-}
-
-.footer-content{
-  max-width:700px;
-  margin:auto;
-}
-
-.footer-content h3{
-  margin-bottom:15px;
-  font-size:28px;
-  color:white;
-}
-
-.footer-content p{
-  line-height:1.8;
-}
-
-.footer-links{
-  margin:30px 0;
-
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.footer-links a{
-  text-decoration:none;
-  color:#d1d5db;
-  transition:0.3s;
-}
-
-.footer-links a:hover{
-  color:#f97316;
-}
-
-.copyright{
-  margin-top:25px;
-  color:#9ca3af;
 }
 
 /* ===== WHATSAPP ===== */
@@ -462,36 +394,14 @@ footer{
   z-index:999;
 }
 
-/* ===== DESKTOP ===== */
-@media(min-width:768px){
-
-  .hero h1{
-    font-size:64px;
-  }
-
-  .stats{
-    max-width:1200px;
-    margin-left:auto;
-    margin-right:auto;
-
-    grid-template-columns:repeat(4,1fr);
-  }
-
-  .courses-preview{
-    max-width:1200px;
-    margin:auto;
-
-    grid-template-columns:repeat(3,1fr);
-  }
-}
-/* ===== INNER PAGES FIX ===== */
-
+/* ===== INNER PAGES ===== */
 .card,
 .contact-card,
 .login-card,
-.dashboard-card{
+.dashboard-card,
+.gallery-page{
 
-  max-width:900px;
+  max-width:1000px;
 
   margin:40px auto;
 
@@ -499,13 +409,11 @@ footer{
 
   padding:35px 25px;
 
-  border-radius:22px;
+  border-radius:25px;
 
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
-
 }
 
-/* HEADINGS */
 .card h1,
 .card h2,
 .contact-card h1,
@@ -515,7 +423,6 @@ footer{
   line-height:1.2;
 }
 
-/* TEXT */
 .card p,
 .contact-card p,
 .login-card p{
@@ -523,7 +430,7 @@ footer{
   line-height:1.8;
 }
 
-/* COURSE BOX */
+/* ===== COURSE BOX ===== */
 .course-box{
   background:#f9fafb;
 
@@ -550,76 +457,7 @@ footer{
   display:block;
 }
 
-/* CONTACT ITEMS */
-.contact-item{
-
-  background:#f9fafb;
-
-  padding:20px;
-
-  border-radius:18px;
-
-  margin-bottom:18px;
-
-  border-left:5px solid #f97316;
-}
-
-.contact-item p{
-  font-weight:700;
-  margin-bottom:8px;
-}
-
-/* INPUTS */
-.login-card input{
-
-  width:100%;
-
-  padding:16px;
-
-  border-radius:14px;
-
-  border:1px solid #ddd;
-
-  margin-bottom:18px;
-
-  font-size:16px;
-
-  font-family:'Poppins',sans-serif;
-}
-
-/* LOGIN BUTTON */
-.login-card .primary-btn{
-  width:100%;
-  text-align:center;
-  border:none;
-}
-
-/* FOOTER SMALLER */
-footer{
-  padding:35px 20px;
-}
-
-/* MOBILE FIX */
-@media(max-width:768px){
-
-  .card h1,
-  .card h2,
-  .contact-card h1,
-  .login-card h1{
-    font-size:28px;
-  }
-
-  .course-box h3{
-    font-size:22px;
-  }
-
-  .hero h1{
-    font-size:38px;
-  }
-
-}
-/* ===== GALLERY FIX ===== */
-
+/* ===== GALLERY ===== */
 .gallery{
   display:grid;
 
@@ -649,127 +487,7 @@ footer{
   transform:scale(1.03);
 }
 
-/* ===== GALLERY PAGE CARD ===== */
-
-.gallery-page{
-
-  max-width:1100px;
-
-  margin:40px auto;
-
-  background:white;
-
-  padding:30px 20px;
-
-  border-radius:25px;
-
-  box-shadow:0 10px 25px rgba(0,0,0,0.06);
-
-}
-
-/* ===== CONTACT PAGE FIX ===== */
-
-.contact-card{
-
-  max-width:900px;
-
-  margin:40px auto;
-
-  background:white;
-
-  padding:35px 25px;
-
-  border-radius:25px;
-
-  box-shadow:0 10px 25px rgba(0,0,0,0.06);
-}
-
-.contact-card h1,
-.contact-card h2{
-  margin-bottom:15px;
-}
-
-.contact-card p{
-  line-height:1.8;
-}
-
-/* CONTACT BOXES */
-.contact-item{
-
-  background:#f9fafb;
-
-  padding:20px;
-
-  border-radius:18px;
-
-  margin-top:18px;
-
-  border-left:5px solid #f97316;
-}
-
-.contact-item a{
-
-  text-decoration:none;
-
-  color:#16a34a;
-
-  font-weight:600;
-}
-
-/* MOBILE */
-@media(min-width:768px){
-
-  .gallery{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .gallery img{
-    height:220px;
-  }
-
-}
-/* ===== CONTACT PAGE PROFESSIONAL FIX ===== */
-
-.contact-card{
-
-  max-width:900px;
-
-  margin:50px auto;
-
-  background:white;
-
-  padding:40px 28px;
-
-  border-radius:28px;
-
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
-}
-
-/* TITLE */
-.contact-card h1{
-
-  font-size:42px;
-
-  margin-bottom:15px;
-
-  color:#111827;
-
-  line-height:1.2;
-}
-
-/* SUBTITLE */
-.contact-card .subtitle{
-
-  color:#6b7280;
-
-  font-size:18px;
-
-  line-height:1.7;
-
-  margin-bottom:30px;
-}
-
-/* CONTACT ITEMS */
+/* ===== CONTACT ===== */
 .contact-item{
 
   background:#f9fafb;
@@ -789,7 +507,6 @@ footer{
   transform:translateY(-3px);
 }
 
-/* LABEL */
 .contact-item p{
 
   font-size:22px;
@@ -801,7 +518,6 @@ footer{
   color:#111827;
 }
 
-/* TEXT */
 .contact-item span{
 
   display:block;
@@ -813,7 +529,6 @@ footer{
   font-size:17px;
 }
 
-/* LINKS */
 .contact-item a{
 
   display:block;
@@ -829,24 +544,85 @@ footer{
   font-weight:600;
 }
 
-/* HOVER */
-.contact-item a:hover{
-  color:#f97316;
+/* ===== INPUTS ===== */
+.login-card input{
+
+  width:100%;
+
+  padding:16px;
+
+  border-radius:14px;
+
+  border:1px solid #ddd;
+
+  margin-bottom:18px;
+
+  font-size:16px;
+
+  font-family:'Poppins',sans-serif;
 }
 
-/* MOBILE */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
 
-  .contact-card{
-    padding:30px 22px;
+  .hero h1{
+    font-size:26px;
+    line-height:1.4;
   }
 
-  .contact-card h1{
-    font-size:32px;
+  .hero p{
+    font-size:16px;
   }
 
-  .contact-item p{
-    font-size:20px;
+  .card h1,
+  .card h2,
+  .contact-card h1,
+  .login-card h1{
+    font-size:28px;
   }
 
+  .course-box h3{
+    font-size:22px;
   }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery img{
+    height:220px;
+  }
+
+}
+
+/* ===== DESKTOP ===== */
+@media(min-width:768px){
+
+  .hero h1{
+    font-size:60px;
+  }
+
+  .stats{
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .courses-preview{
+    max-width:1200px;
+    margin:auto;
+
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .gallery{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .gallery img{
+    height:220px;
+  }
+
+}
