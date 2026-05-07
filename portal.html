@@ -99,7 +99,6 @@ body{
   border-radius:14px;
   font-size:16px;
   outline:none;
-  transition:0.3s;
 }
 
 .input-group input:focus{
@@ -116,13 +115,11 @@ body{
   font-size:18px;
   font-weight:bold;
   cursor:pointer;
-  transition:0.3s;
   margin-top:10px;
 }
 
 .login-btn:hover{
   background:#ea580c;
-  transform:translateY(-3px);
 }
 
 .portal-footer{
@@ -183,13 +180,15 @@ body{
   <h1>Student Portal</h1>
 
   <p>
-    Access your academic information, results,
-    profile and institutional updates securely online.
+
+    Access your academic information,
+    student profile and results securely online.
+
   </p>
 
 </section>
 
-<!-- LOGIN -->
+<!-- LOGIN CARD -->
 
 <div class="portal-wrapper">
 
@@ -203,10 +202,12 @@ body{
 
     <p class="portal-subtitle">
 
-      Enter your student credentials
+      Enter your student credentials below
       to access your dashboard.
 
     </p>
+
+    <!-- STUDENT NUMBER -->
 
     <div class="input-group">
 
@@ -220,6 +221,8 @@ body{
 
     </div>
 
+    <!-- PASSWORD -->
+
     <div class="input-group">
 
       <label>Password</label>
@@ -232,7 +235,13 @@ body{
 
     </div>
 
-    <button onclick="loginStudent()" class="login-btn">
+    <!-- BUTTON -->
+
+    <button
+      type="button"
+      onclick="loginStudent()"
+      class="login-btn"
+    >
 
       Login To Dashboard
 
@@ -262,9 +271,10 @@ body{
 
 <script>
 
-function toggleMenu() {
+function toggleMenu(){
 
-  var menu = document.getElementById("menu");
+  var menu =
+    document.getElementById("menu");
 
   menu.classList.toggle("show");
 
@@ -286,22 +296,32 @@ function loginStudent(){
 
   }
 
-  fetch("https://script.google.com/macros/s/AKfycbwZjRT8iJQmUkcu65rSTX3yPm_pi95ro_ImzEbe_s15oOP_ZzPxzh2yfQky631QDgTacg/exec", {
+  fetch(
+    "https://script.google.com/macros/s/AKfycbwZjRT8iJQmUkcu65rSTX3yPm_pi95ro_ImzEbe_s15oOP_ZzPxzh2yfQky631QDgTacg/exec",
+    {
 
-    method:"POST",
+      method:"POST",
 
-    body:JSON.stringify({
+      headers:{
+        "Content-Type":"application/json"
+      },
 
-      studentId:studentId,
-      password:password
+      body:JSON.stringify({
 
-    })
+        studentId:studentId,
+        password:password
 
-  })
+      })
+
+    }
+
+  )
 
   .then(response => response.json())
 
   .then(data => {
+
+    console.log(data);
 
     if(data.status === "success"){
 
@@ -310,13 +330,17 @@ function loginStudent(){
         JSON.stringify(data)
       );
 
-      window.location.href = "dashboard.html";
+      window.location.href =
+        "dashboard.html";
 
     }
 
     else{
 
-      alert("Invalid student number or password");
+      alert(
+        data.message ||
+        "Invalid student number or password"
+      );
 
     }
 
